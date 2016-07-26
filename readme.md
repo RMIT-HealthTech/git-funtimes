@@ -46,3 +46,40 @@ The only thing left to do is to add a reference to the RMIT-HealthTech repo of t
 git remote add upstream git@github.com:RMIT-HealthTech/git-funtimes.git
 ```
 If you type *git remote -v* into a command line, you will see that you'll have two references to remotes, *origin* which is your fork, and *upstream* which is RMIT-HealthTech's fork.
+
+###Making a change and commiting the changes
+Once you have a local copy of this repo all set up, now is when you can finally make a change! the simplest change to make would be to simply open the *index.html* file and add this line of code above the comment in the *index.html* file (replace 'Your Name!' with your real name)
+
+```
+<div class="nameBlock">
+  <h2>Your Name!</h2>
+</div>
+```
+and save *index.html*. if you open *index.html* You'll see that your name is now added to the page!
+
+Now you'll want to 'commit' that change to the git repo. to commit the changes you make, simply run these commands
+
+```
+git add .
+git commit -m "Type a Commit Message Here!"
+```
+
+These Commands will *stage* your changes to be *committed*, and the commit will permanently save your changes to the local git repo. If you want to keep making more changed and committing them, feel free to do so!
+
+###uploading your changes to your fork
+Now, we need to upload your new changes to the files to your fork located on github, if you remember from earlier, you will have Two remotes, *origin* which should be your fork, and *upstream* which should be the main codebase for RMIT-HealthTech.
+
+before uploading your changes, we should check to see if there are any new changes tot he RMIT-HealthTech repo, to download any new changes, commit any changes you have made and then run
+```
+git pull upstream master
+```
+this will grab all the latest changes, and merge them with your changes to the code. Once that is complete, upload your changes to your fork on github!
+```
+git push origin master
+```
+Just a warning, never, ever force push your commits to a remote, as force pushing can cause a lot of headache when using features of git that allow you to see old code and revert changes.
+
+###Finally, merging your changes into the RMIT-HealthTech repo
+Now that you have uploaded your changes, You will want to merge your changes into main RMIT-HealthTech repo. in order to do so, you will need to open a *Pull Request* to merge your changes into RMIT-HealthTech/master. In order to do that, please refer to this [documentation on opening Pull Requests](https://help.github.com/articles/creating-a-pull-request/)
+
+Once someone merges your Pull Request, your changes should be available for everyone to pull down!
